@@ -1,0 +1,4 @@
+[submodule "Overcoat"]
+	path = Overcoat
+	url = git://github.com/gonzalezreal/Overcoat.git
+	ignore = dirty
