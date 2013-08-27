@@ -31,6 +31,7 @@
 		99913E6417CB8D84004E8C2C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6317CB8D84004E8C2C /* MobileCoreServices.framework */; };
 		99913E6617CB8D8E004E8C2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6517CB8D8E004E8C2C /* SystemConfiguration.framework */; };
 		99FA797317CCE2610067BDCC /* TGRBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797217CCE2610067BDCC /* TGRBook.m */; };
+		99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		99913E6517CB8D8E004E8C2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		99FA797117CCE2610067BDCC /* TGRBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBook.h; sourceTree = "<group>"; };
 		99FA797217CCE2610067BDCC /* TGRBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBook.m; sourceTree = "<group>"; };
+		99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCatalog.h; sourceTree = "<group>"; };
+		99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookCatalog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +185,8 @@
 			children = (
 				99FA797117CCE2610067BDCC /* TGRBook.h */,
 				99FA797217CCE2610067BDCC /* TGRBook.m */,
+				99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */,
+				99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */,
 				99913E1817CB8834004E8C2C /* TGRAppDelegate.h */,
 				99913E1917CB8834004E8C2C /* TGRAppDelegate.m */,
 				99913E2117CB8834004E8C2C /* TGRMasterViewController.h */,
@@ -394,6 +399,7 @@
 				99913E2317CB8834004E8C2C /* TGRMasterViewController.m in Sources */,
 				99913E2617CB8834004E8C2C /* TGRDetailViewController.m in Sources */,
 				99FA797317CCE2610067BDCC /* TGRBook.m in Sources */,
+				99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
