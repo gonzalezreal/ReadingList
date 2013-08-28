@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @class TGRBook;
 
 @interface TGRBookViewController : UITableViewController

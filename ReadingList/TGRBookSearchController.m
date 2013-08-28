@@ -10,6 +10,7 @@
 #import "TGRBook.h"
 #import "TGRBookCatalog.h"
 #import "TGRArrayDataSource.h"
+#import "TGRBookCell.h"
 
 static NSString *const kCellIdentifier = @"SearchResultCell";
 
@@ -58,7 +59,8 @@ static NSString *const kCellIdentifier = @"SearchResultCell";
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView {
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+    tableView.rowHeight = TGRBookCellHeight;
+    [tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TGRBookCell class]) bundle:nil] forCellReuseIdentifier:kCellIdentifier];
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
@@ -102,9 +104,8 @@ static NSString *const kCellIdentifier = @"SearchResultCell";
         if (error == nil) {
             @strongify(self);
             
-            self.dataSource = [TGRArrayDataSource dataSourceWithItems:results cellIdentifier:kCellIdentifier configureCellBlock:^(UITableViewCell *cell, TGRBook *book) {
-                cell.textLabel.text = book.title;
-                cell.detailTextLabel.text = book.author;
+            self.dataSource = [TGRArrayDataSource dataSourceWithItems:results cellIdentifier:kCellIdentifier configureCellBlock:^(TGRBookCell *cell, TGRBook *book) {
+                [cell configureWithBook:book];
             }];
         }
     }];

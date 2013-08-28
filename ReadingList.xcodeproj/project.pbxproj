@@ -34,6 +34,8 @@
 		99E73BC117CE33F500FE1C29 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E73BC017CE33F500FE1C29 /* Social.framework */; };
 		99E73BC517CE392D00FE1C29 /* TGRBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73BC317CE392D00FE1C29 /* TGRBookViewController.m */; };
 		99E73BC617CE392D00FE1C29 /* TGRBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E73BC417CE392D00FE1C29 /* TGRBookViewController.xib */; };
+		99E73BC917CE3F6E00FE1C29 /* TGRBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E73BC817CE3F6E00FE1C29 /* TGRBookCell.xib */; };
+		99E73BCC17CE3F9F00FE1C29 /* TGRBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73BCB17CE3F9F00FE1C29 /* TGRBookCell.m */; };
 		99FA797317CCE2610067BDCC /* TGRBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797217CCE2610067BDCC /* TGRBook.m */; };
 		99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */; };
 /* End PBXBuildFile section */
@@ -120,6 +122,9 @@
 		99E73BC217CE392D00FE1C29 /* TGRBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookViewController.h; sourceTree = "<group>"; };
 		99E73BC317CE392D00FE1C29 /* TGRBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookViewController.m; sourceTree = "<group>"; };
 		99E73BC417CE392D00FE1C29 /* TGRBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGRBookViewController.xib; sourceTree = "<group>"; };
+		99E73BC817CE3F6E00FE1C29 /* TGRBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGRBookCell.xib; sourceTree = "<group>"; };
+		99E73BCA17CE3F9F00FE1C29 /* TGRBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCell.h; sourceTree = "<group>"; };
+		99E73BCB17CE3F9F00FE1C29 /* TGRBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookCell.m; sourceTree = "<group>"; };
 		99FA797117CCE2610067BDCC /* TGRBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBook.h; sourceTree = "<group>"; };
 		99FA797217CCE2610067BDCC /* TGRBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBook.m; sourceTree = "<group>"; };
 		99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCatalog.h; sourceTree = "<group>"; };
@@ -197,6 +202,7 @@
 		99913E0F17CB8834004E8C2C /* ReadingList */ = {
 			isa = PBXGroup;
 			children = (
+				99E73BC717CE3F2F00FE1C29 /* Cells */,
 				99E73B7E17CE2B0500FE1C29 /* View Controllers */,
 				99E73B7D17CE2AF600FE1C29 /* Model */,
 				99E73B7C17CE2AE300FE1C29 /* Utilities */,
@@ -284,6 +290,16 @@
 				99E73BC417CE392D00FE1C29 /* TGRBookViewController.xib */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		99E73BC717CE3F2F00FE1C29 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				99E73BC817CE3F6E00FE1C29 /* TGRBookCell.xib */,
+				99E73BCA17CE3F9F00FE1C29 /* TGRBookCell.h */,
+				99E73BCB17CE3F9F00FE1C29 /* TGRBookCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +418,7 @@
 				99913E2017CB8834004E8C2C /* Default-568h@2x.png in Resources */,
 				99E73B8317CE2B6F00FE1C29 /* TGRBookListViewController.xib in Resources */,
 				99E73BC617CE392D00FE1C29 /* TGRBookViewController.xib in Resources */,
+				99E73BC917CE3F6E00FE1C29 /* TGRBookCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +461,7 @@
 				99E73B6717CDF88400FE1C29 /* TGRArrayDataSource.m in Sources */,
 				99E73B8217CE2B6F00FE1C29 /* TGRBookListViewController.m in Sources */,
 				99E73BC517CE392D00FE1C29 /* TGRBookViewController.m in Sources */,
+				99E73BCC17CE3F9F00FE1C29 /* TGRBookCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
