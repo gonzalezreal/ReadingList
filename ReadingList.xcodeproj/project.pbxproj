@@ -16,8 +16,6 @@
 		99913E1C17CB8834004E8C2C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 99913E1B17CB8834004E8C2C /* Default.png */; };
 		99913E1E17CB8834004E8C2C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99913E1D17CB8834004E8C2C /* Default@2x.png */; };
 		99913E2017CB8834004E8C2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99913E1F17CB8834004E8C2C /* Default-568h@2x.png */; };
-		99913E2617CB8834004E8C2C /* TGRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99913E2517CB8834004E8C2C /* TGRDetailViewController.m */; };
-		99913E2C17CB8834004E8C2C /* TGRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99913E2A17CB8834004E8C2C /* TGRDetailViewController.xib */; };
 		99913E3417CB8835004E8C2C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E3317CB8835004E8C2C /* SenTestingKit.framework */; };
 		99913E3517CB8835004E8C2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E0917CB8834004E8C2C /* UIKit.framework */; };
 		99913E3617CB8835004E8C2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E0B17CB8834004E8C2C /* Foundation.framework */; };
@@ -34,6 +32,8 @@
 		99E73B8317CE2B6F00FE1C29 /* TGRBookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E73B8117CE2B6F00FE1C29 /* TGRBookListViewController.xib */; };
 		99E73BBF17CE33EC00FE1C29 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E73BBE17CE33EB00FE1C29 /* Accounts.framework */; };
 		99E73BC117CE33F500FE1C29 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E73BC017CE33F500FE1C29 /* Social.framework */; };
+		99E73BC517CE392D00FE1C29 /* TGRBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73BC317CE392D00FE1C29 /* TGRBookViewController.m */; };
+		99E73BC617CE392D00FE1C29 /* TGRBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E73BC417CE392D00FE1C29 /* TGRBookViewController.xib */; };
 		99FA797317CCE2610067BDCC /* TGRBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797217CCE2610067BDCC /* TGRBook.m */; };
 		99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */; };
 /* End PBXBuildFile section */
@@ -97,9 +97,6 @@
 		99913E1B17CB8834004E8C2C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		99913E1D17CB8834004E8C2C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		99913E1F17CB8834004E8C2C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		99913E2417CB8834004E8C2C /* TGRDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGRDetailViewController.h; sourceTree = "<group>"; };
-		99913E2517CB8834004E8C2C /* TGRDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TGRDetailViewController.m; sourceTree = "<group>"; };
-		99913E2B17CB8834004E8C2C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TGRDetailViewController.xib; sourceTree = "<group>"; };
 		99913E3217CB8835004E8C2C /* ReadingListTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadingListTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99913E3317CB8835004E8C2C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		99913E3B17CB8835004E8C2C /* ReadingListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReadingListTests-Info.plist"; sourceTree = "<group>"; };
@@ -120,6 +117,9 @@
 		99E73B8117CE2B6F00FE1C29 /* TGRBookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGRBookListViewController.xib; sourceTree = "<group>"; };
 		99E73BBE17CE33EB00FE1C29 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		99E73BC017CE33F500FE1C29 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		99E73BC217CE392D00FE1C29 /* TGRBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookViewController.h; sourceTree = "<group>"; };
+		99E73BC317CE392D00FE1C29 /* TGRBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookViewController.m; sourceTree = "<group>"; };
+		99E73BC417CE392D00FE1C29 /* TGRBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGRBookViewController.xib; sourceTree = "<group>"; };
 		99FA797117CCE2610067BDCC /* TGRBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBook.h; sourceTree = "<group>"; };
 		99FA797217CCE2610067BDCC /* TGRBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBook.m; sourceTree = "<group>"; };
 		99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCatalog.h; sourceTree = "<group>"; };
@@ -279,9 +279,9 @@
 				99E73B7F17CE2B6F00FE1C29 /* TGRBookListViewController.h */,
 				99E73B8017CE2B6F00FE1C29 /* TGRBookListViewController.m */,
 				99E73B8117CE2B6F00FE1C29 /* TGRBookListViewController.xib */,
-				99913E2417CB8834004E8C2C /* TGRDetailViewController.h */,
-				99913E2517CB8834004E8C2C /* TGRDetailViewController.m */,
-				99913E2A17CB8834004E8C2C /* TGRDetailViewController.xib */,
+				99E73BC217CE392D00FE1C29 /* TGRBookViewController.h */,
+				99E73BC317CE392D00FE1C29 /* TGRBookViewController.m */,
+				99E73BC417CE392D00FE1C29 /* TGRBookViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -400,8 +400,8 @@
 				99913E1C17CB8834004E8C2C /* Default.png in Resources */,
 				99913E1E17CB8834004E8C2C /* Default@2x.png in Resources */,
 				99913E2017CB8834004E8C2C /* Default-568h@2x.png in Resources */,
-				99913E2C17CB8834004E8C2C /* TGRDetailViewController.xib in Resources */,
 				99E73B8317CE2B6F00FE1C29 /* TGRBookListViewController.xib in Resources */,
+				99E73BC617CE392D00FE1C29 /* TGRBookViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,12 +438,12 @@
 			files = (
 				99913E1617CB8834004E8C2C /* main.m in Sources */,
 				99913E1A17CB8834004E8C2C /* TGRAppDelegate.m in Sources */,
-				99913E2617CB8834004E8C2C /* TGRDetailViewController.m in Sources */,
 				99FA797317CCE2610067BDCC /* TGRBook.m in Sources */,
 				99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */,
 				99E73B6117CDF6EC00FE1C29 /* TGRBookSearchController.m in Sources */,
 				99E73B6717CDF88400FE1C29 /* TGRArrayDataSource.m in Sources */,
 				99E73B8217CE2B6F00FE1C29 /* TGRBookListViewController.m in Sources */,
+				99E73BC517CE392D00FE1C29 /* TGRBookViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,14 +477,6 @@
 				99913E1317CB8834004E8C2C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		99913E2A17CB8834004E8C2C /* TGRDetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				99913E2B17CB8834004E8C2C /* en */,
-			);
-			name = TGRDetailViewController.xib;
 			sourceTree = "<group>";
 		};
 		99913E3C17CB8835004E8C2C /* InfoPlist.strings */ = {

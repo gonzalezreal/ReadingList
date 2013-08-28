@@ -1,32 +1,38 @@
 //
-//  TGRBookListViewController.m
+//  TGRBookViewController.m
 //  ReadingList
 //
 //  Created by guille on 28/08/13.
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
-#import "TGRBookListViewController.h"
-#import "TGRBookSearchController.h"
 #import "TGRBookViewController.h"
 #import "TGRBook.h"
 
-@interface TGRBookListViewController ()
-
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (strong, nonatomic) TGRBookSearchController *bookSearchController;
+@interface TGRBookViewController ()
 
 @end
 
-@implementation TGRBookListViewController
+@implementation TGRBookViewController
+
+- (id)initWithBook:(TGRBook *)book {
+    self = [super init];
+    if (self) {
+        _book = [book copy];
+    }
+
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = NSLocalizedString(@"Reading List", @"");
+    self.title = self.book.title;
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
 
-    [self setupSearchBar];
-    [self setupBookSearchController];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,28 +115,6 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-}
-
-#pragma mark - Private methods
-
-- (void)setupSearchBar {
-    self.searchBar.placeholder = NSLocalizedString(@"Search iBooks Store", @"");
-
-    for (UIView *view in self.searchBar.subviews) {
-        if ([view isKindOfClass:UITextField.class]) {
-            UITextField *textField = (UITextField *) view;
-            [textField setReturnKeyType:UIReturnKeyDone];
-        }
-    }
-}
-
-- (void)setupBookSearchController {
-    UINavigationController *navigationController = self.navigationController;
-
-    self.bookSearchController = [[TGRBookSearchController alloc] initWithSearchBar:self.searchBar contentsController:self didSelectBookBlock:^(TGRBook *book) {
-        TGRBookViewController *bookViewController = [[TGRBookViewController alloc] initWithBook:book];
-        [navigationController pushViewController:bookViewController animated:YES];
-    }];
 }
 
 @end
