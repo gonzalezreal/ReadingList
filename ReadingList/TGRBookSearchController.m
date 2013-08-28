@@ -86,7 +86,9 @@ static NSString *const kCellIdentifier = @"SearchResultCell";
 
 - (void)setDataSource:(TGRArrayDataSource *)dataSource {
     _dataSource = dataSource;
+
     self.searchDisplayController.searchResultsDataSource = dataSource;
+    [self.searchDisplayController.searchResultsTableView reloadData];
 }
 
 - (void)loadResultsWithSearchString:(NSString *)searchString {
