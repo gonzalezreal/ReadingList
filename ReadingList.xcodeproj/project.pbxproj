@@ -30,6 +30,8 @@
 		99913E6217CB8D7C004E8C2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6117CB8D7C004E8C2C /* Security.framework */; };
 		99913E6417CB8D84004E8C2C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6317CB8D84004E8C2C /* MobileCoreServices.framework */; };
 		99913E6617CB8D8E004E8C2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6517CB8D8E004E8C2C /* SystemConfiguration.framework */; };
+		99E73B6117CDF6EC00FE1C29 /* TGRBookSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73B6017CDF6EC00FE1C29 /* TGRBookSearchController.m */; };
+		99E73B6717CDF88400FE1C29 /* TGRArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73B6617CDF88400FE1C29 /* TGRArrayDataSource.m */; };
 		99FA797317CCE2610067BDCC /* TGRBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797217CCE2610067BDCC /* TGRBook.m */; };
 		99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */; };
 /* End PBXBuildFile section */
@@ -110,6 +112,10 @@
 		99913E6117CB8D7C004E8C2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		99913E6317CB8D84004E8C2C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		99913E6517CB8D8E004E8C2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		99E73B5F17CDF6EC00FE1C29 /* TGRBookSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookSearchController.h; sourceTree = "<group>"; };
+		99E73B6017CDF6EC00FE1C29 /* TGRBookSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookSearchController.m; sourceTree = "<group>"; };
+		99E73B6517CDF88400FE1C29 /* TGRArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRArrayDataSource.h; sourceTree = "<group>"; };
+		99E73B6617CDF88400FE1C29 /* TGRArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRArrayDataSource.m; sourceTree = "<group>"; };
 		99FA797117CCE2610067BDCC /* TGRBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBook.h; sourceTree = "<group>"; };
 		99FA797217CCE2610067BDCC /* TGRBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBook.m; sourceTree = "<group>"; };
 		99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCatalog.h; sourceTree = "<group>"; };
@@ -187,6 +193,8 @@
 				99FA797217CCE2610067BDCC /* TGRBook.m */,
 				99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */,
 				99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */,
+				99E73B5F17CDF6EC00FE1C29 /* TGRBookSearchController.h */,
+				99E73B6017CDF6EC00FE1C29 /* TGRBookSearchController.m */,
 				99913E1817CB8834004E8C2C /* TGRAppDelegate.h */,
 				99913E1917CB8834004E8C2C /* TGRAppDelegate.m */,
 				99913E2117CB8834004E8C2C /* TGRMasterViewController.h */,
@@ -196,6 +204,8 @@
 				99913E2717CB8834004E8C2C /* TGRMasterViewController.xib */,
 				99913E2A17CB8834004E8C2C /* TGRDetailViewController.xib */,
 				99913E1017CB8834004E8C2C /* Supporting Files */,
+				99E73B6517CDF88400FE1C29 /* TGRArrayDataSource.h */,
+				99E73B6617CDF88400FE1C29 /* TGRArrayDataSource.m */,
 			);
 			path = ReadingList;
 			sourceTree = "<group>";
@@ -400,6 +410,8 @@
 				99913E2617CB8834004E8C2C /* TGRDetailViewController.m in Sources */,
 				99FA797317CCE2610067BDCC /* TGRBook.m in Sources */,
 				99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */,
+				99E73B6117CDF6EC00FE1C29 /* TGRBookSearchController.m in Sources */,
+				99E73B6717CDF88400FE1C29 /* TGRArrayDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +501,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"Overcoat/AFNetworking/**",
+					"Overcoat/Mantle/Mantle/**",
 					"$(inherited)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -517,6 +530,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"Overcoat/AFNetworking/**",
+					"Overcoat/Mantle/Mantle/**",
 					"$(inherited)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
