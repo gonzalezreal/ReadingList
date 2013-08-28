@@ -30,6 +30,8 @@
 		99913E6217CB8D7C004E8C2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6117CB8D7C004E8C2C /* Security.framework */; };
 		99913E6417CB8D84004E8C2C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6317CB8D84004E8C2C /* MobileCoreServices.framework */; };
 		99913E6617CB8D8E004E8C2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6517CB8D8E004E8C2C /* SystemConfiguration.framework */; };
+		99FA797317CCE2610067BDCC /* TGRBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797217CCE2610067BDCC /* TGRBook.m */; };
+		99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,10 +106,14 @@
 		99913E3F17CB8835004E8C2C /* ReadingListTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingListTests.h; sourceTree = "<group>"; };
 		99913E4017CB8835004E8C2C /* ReadingListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadingListTests.m; sourceTree = "<group>"; };
 		99913E4A17CB8BEC004E8C2C /* Overcoat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Overcoat.xcodeproj; path = Overcoat/Overcoat.xcodeproj; sourceTree = "<group>"; };
-		99913E5F17CB8D69004E8C2C /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libMantle.a; path = "Overcoat/Mantle/build/Release-iphoneos/libMantle.a"; sourceTree = "<group>"; };
+		99913E5F17CB8D69004E8C2C /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Overcoat/Mantle/build/Release-iphoneos/libMantle.a"; sourceTree = "<group>"; };
 		99913E6117CB8D7C004E8C2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		99913E6317CB8D84004E8C2C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		99913E6517CB8D8E004E8C2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		99FA797117CCE2610067BDCC /* TGRBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBook.h; sourceTree = "<group>"; };
+		99FA797217CCE2610067BDCC /* TGRBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBook.m; sourceTree = "<group>"; };
+		99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCatalog.h; sourceTree = "<group>"; };
+		99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookCatalog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,10 @@
 		99913E0F17CB8834004E8C2C /* ReadingList */ = {
 			isa = PBXGroup;
 			children = (
+				99FA797117CCE2610067BDCC /* TGRBook.h */,
+				99FA797217CCE2610067BDCC /* TGRBook.m */,
+				99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */,
+				99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */,
 				99913E1817CB8834004E8C2C /* TGRAppDelegate.h */,
 				99913E1917CB8834004E8C2C /* TGRAppDelegate.m */,
 				99913E2117CB8834004E8C2C /* TGRMasterViewController.h */,
@@ -388,6 +398,8 @@
 				99913E1A17CB8834004E8C2C /* TGRAppDelegate.m in Sources */,
 				99913E2317CB8834004E8C2C /* TGRMasterViewController.m in Sources */,
 				99913E2617CB8834004E8C2C /* TGRDetailViewController.m in Sources */,
+				99FA797317CCE2610067BDCC /* TGRBook.m in Sources */,
+				99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +601,7 @@
 				99913E4617CB8835004E8C2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99913E4717CB8835004E8C2C /* Build configuration list for PBXNativeTarget "ReadingListTests" */ = {
 			isa = XCConfigurationList;
@@ -597,6 +610,7 @@
 				99913E4917CB8835004E8C2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
