@@ -120,6 +120,7 @@
         if ([view isKindOfClass:UITextField.class]) {
             UITextField *textField = (UITextField *) view;
             [textField setReturnKeyType:UIReturnKeyDone];
+            break;
         }
     }
 }
