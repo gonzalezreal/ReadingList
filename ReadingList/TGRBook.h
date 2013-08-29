@@ -15,5 +15,6 @@
 @property (copy, nonatomic, readonly) NSNumber *identifier;
 @property (copy, nonatomic, readonly) NSString *title;
 @property (copy, nonatomic, readonly) NSURL *coverURL;
+@property (copy, nonatomic, readonly) NSURL *bigCoverURL;
 
 @end
