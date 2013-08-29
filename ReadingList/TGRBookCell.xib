@@ -81,6 +81,7 @@
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
+								<int key="IBUINumberOfLines">0</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">2</int>
 									<double key="pointSize">16</double>
@@ -91,6 +92,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+								<double key="preferredMaxLayoutWidth">222</double>
 							</object>
 							<object class="IBUILabel" id="972857096">
 								<reference key="NSNextResponder" ref="353993481"/>
@@ -124,7 +126,7 @@
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 95}</string>
+						<string key="NSFrameSize">{300, 95}</string>
 						<reference key="NSSuperview" ref="851973381"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="287634562"/>
@@ -146,6 +148,7 @@
 				<reference key="NSNextKeyView" ref="353993481"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+				<int key="IBUIAccessoryType">1</int>
 				<reference key="IBUIContentView" ref="353993481"/>
 				<real value="96" key="IBUIRowHeight"/>
 			</object>

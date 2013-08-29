@@ -108,6 +108,9 @@ static NSString *const kCellIdentifier = @"SearchResultCell";
                 [cell configureWithBook:book];
             }];
         }
+        else {
+            NSLog(@"[search error] %@", [error localizedDescription]);
+        }
     }];
 }
 

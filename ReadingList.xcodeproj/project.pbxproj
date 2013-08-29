@@ -36,6 +36,7 @@
 		99E73BC617CE392D00FE1C29 /* TGRBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E73BC417CE392D00FE1C29 /* TGRBookViewController.xib */; };
 		99E73BC917CE3F6E00FE1C29 /* TGRBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E73BC817CE3F6E00FE1C29 /* TGRBookCell.xib */; };
 		99E73BCC17CE3F9F00FE1C29 /* TGRBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73BCB17CE3F9F00FE1C29 /* TGRBookCell.m */; };
+		99E7EC7517CF1F2900F618C4 /* UIView+FrameAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E7EC7417CF1F2900F618C4 /* UIView+FrameAdditions.m */; };
 		99FA797317CCE2610067BDCC /* TGRBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797217CCE2610067BDCC /* TGRBook.m */; };
 		99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */; };
 /* End PBXBuildFile section */
@@ -125,6 +126,8 @@
 		99E73BC817CE3F6E00FE1C29 /* TGRBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGRBookCell.xib; sourceTree = "<group>"; };
 		99E73BCA17CE3F9F00FE1C29 /* TGRBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCell.h; sourceTree = "<group>"; };
 		99E73BCB17CE3F9F00FE1C29 /* TGRBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookCell.m; sourceTree = "<group>"; };
+		99E7EC7317CF1F2900F618C4 /* UIView+FrameAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameAdditions.h"; sourceTree = "<group>"; };
+		99E7EC7417CF1F2900F618C4 /* UIView+FrameAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameAdditions.m"; sourceTree = "<group>"; };
 		99FA797117CCE2610067BDCC /* TGRBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBook.h; sourceTree = "<group>"; };
 		99FA797217CCE2610067BDCC /* TGRBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBook.m; sourceTree = "<group>"; };
 		99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCatalog.h; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 			children = (
 				99E73B6517CDF88400FE1C29 /* TGRArrayDataSource.h */,
 				99E73B6617CDF88400FE1C29 /* TGRArrayDataSource.m */,
+				99E7EC7317CF1F2900F618C4 /* UIView+FrameAdditions.h */,
+				99E7EC7417CF1F2900F618C4 /* UIView+FrameAdditions.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 				99E73B8217CE2B6F00FE1C29 /* TGRBookListViewController.m in Sources */,
 				99E73BC517CE392D00FE1C29 /* TGRBookViewController.m in Sources */,
 				99E73BCC17CE3F9F00FE1C29 /* TGRBookCell.m in Sources */,
+				99E7EC7517CF1F2900F618C4 /* UIView+FrameAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import "TGRBook.h"
 
 #import "UIImageView+AFNetworking.h"
+#import "UIView+FrameAdditions.h"
 
 const CGFloat TGRBookCellHeight = 96.0;
 
@@ -17,6 +18,7 @@ const CGFloat TGRBookCellHeight = 96.0;
 
 - (void)prepareForReuse {
     [self.coverImageView cancelImageRequestOperation];
+    self.coverImageView.image = nil;
 }
 
 - (void)configureWithBook:(TGRBook *)book {
@@ -30,7 +32,16 @@ const CGFloat TGRBookCellHeight = 96.0;
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    // TODO: layout labels
+    const CGFloat maxWidth = self.contentView.$width - self.titleLabel.$x - 8;
+    const CGSize maxTitleSize = { .width = maxWidth, .height = 58 };
+
+    CGSize titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font
+                                        constrainedToSize:maxTitleSize
+                                            lineBreakMode:NSLineBreakByTruncatingTail];
+    self.titleLabel.$size = titleSize;
+
+    self.authorLabel.$y = self.titleLabel.$bottom + 2;
+    self.authorLabel.$width = maxWidth;
 }
 
 @end
