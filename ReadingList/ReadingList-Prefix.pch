@@ -21,4 +21,5 @@
 
     #import <Overcoat/Overcoat.h>
     #import <Mantle/Mantle.h>
+    #import <EXTScope.h>
 #endif
