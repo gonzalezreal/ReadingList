@@ -33,7 +33,7 @@ const CGFloat TGRBookCellHeight = 96.0;
     [super layoutSubviews];
 
     const CGFloat maxWidth = self.contentView.$width - self.titleLabel.$x - 8;
-    const CGSize maxTitleSize = { .width = maxWidth, .height = 58 };
+    const CGSize maxTitleSize = (CGSize) { .width = maxWidth, .height = 58 };
 
     CGSize titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font
                                         constrainedToSize:maxTitleSize

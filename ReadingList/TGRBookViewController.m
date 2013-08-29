@@ -9,7 +9,26 @@
 #import "TGRBookViewController.h"
 #import "TGRBook.h"
 
-@interface TGRBookViewController ()
+#import "UIImageView+AFNetworking.h"
+#import "UIView+FrameAdditions.h"
+
+static NSString *const kBookDescriptionFormat = @"<html>"
+        "<style type=\"text/css\">"
+        "body { font-family:HelveticaNeue; font-size:15;}"
+        "</style>"
+        "<body>"
+        "%@"
+        "</body></html>";
+
+@interface TGRBookViewController () <UIWebViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *genreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *releaseDateLabel;
+@property (weak, nonatomic) IBOutlet UIWebView *descriptionView;
 
 @end
 
@@ -27,94 +46,62 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = self.book.title;
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.title = NSLocalizedString(@"Info", @"");
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setupViews];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLayoutSubviews {
+    [self layoutHeader];
+    [self layoutDescription];
 }
 
-#pragma mark - Table view data source
+#pragma mark - UIWebViewDelegate methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self layoutDescription];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
+#pragma mark - Private methods
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+- (void)setupViews {
+    [self.coverImageView setImageWithURL:self.book.bigCoverURL];
+
+    self.titleLabel.text = self.book.title;
+    self.authorLabel.text = self.book.author;
+    [self layoutHeader];
+
+    self.genreLabel.text = [self.book.genres mtl_firstObject];
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+
+    self.releaseDateLabel.text = [dateFormatter stringFromDate:self.book.releaseDate];
+
+    if (self.book.overview) {
+        NSString *htmlString = [NSString stringWithFormat:kBookDescriptionFormat, self.book.overview];
+        [self.descriptionView loadHTMLString:htmlString baseURL:nil];
+        self.descriptionView.scrollView.scrollEnabled = NO;
     }
-
-    // Configure the cell...
-
-    return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)layoutHeader {
+    const CGFloat maxWidth = self.view.$width - self.titleLabel.$x - 8;
+    const CGSize maxTitleSize = (CGSize) { .width = maxWidth, .height = 58 };
+
+    CGSize titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font
+                                        constrainedToSize:maxTitleSize
+                                            lineBreakMode:NSLineBreakByTruncatingTail];
+    self.titleLabel.$size = titleSize;
+
+    self.authorLabel.$y = self.titleLabel.$bottom + 2;
+    self.authorLabel.$width = maxWidth;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void)layoutDescription {
+    self.descriptionView.$height = [[self.descriptionView stringByEvaluatingJavaScriptFromString:@"document.documentElement.scrollHeight;"] floatValue];
+    self.scrollView.contentSize = (CGSize) { .width = self.view.$width, .height = self.descriptionView.$bottom };
 }
 
 @end

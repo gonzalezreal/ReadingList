@@ -8,7 +8,7 @@
 
 @class TGRBook;
 
-@interface TGRBookViewController : UITableViewController
+@interface TGRBookViewController : UIViewController
 
 @property (copy, nonatomic, readonly) TGRBook *book;
 

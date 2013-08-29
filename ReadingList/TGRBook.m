@@ -10,6 +10,11 @@
 
 @implementation TGRBook
 
+- (NSURL *)bigCoverURL {
+    NSString *bigCoverURL = [[self.coverURL absoluteString] stringByReplacingOccurrencesOfString:@"100x100" withString:@"225x225"];
+    return [NSURL URLWithString:bigCoverURL];
+}
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
             @"author" : @"artistName",
