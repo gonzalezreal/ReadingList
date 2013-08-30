@@ -43,6 +43,7 @@
 		99F84CA917D09D7C00914D48 /* TGRFetchedResultsControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F84CA817D09D7C00914D48 /* TGRFetchedResultsControllerDataSource.m */; };
 		99F84CAC17D09DE200914D48 /* TGRDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F84CAB17D09DE100914D48 /* TGRDataSource.m */; };
 		99F84CAF17D0A08500914D48 /* NSObject+Abstract.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F84CAE17D0A08500914D48 /* NSObject+Abstract.m */; };
+		99F84CB217D0A8EE00914D48 /* TGRFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F84CB117D0A8EE00914D48 /* TGRFetchedResultsTableViewController.m */; };
 		99FA797317CCE2610067BDCC /* TGRBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797217CCE2610067BDCC /* TGRBook.m */; };
 		99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */; };
 /* End PBXBuildFile section */
@@ -144,6 +145,8 @@
 		99F84CAB17D09DE100914D48 /* TGRDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRDataSource.m; sourceTree = "<group>"; };
 		99F84CAD17D0A08500914D48 /* NSObject+Abstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Abstract.h"; sourceTree = "<group>"; };
 		99F84CAE17D0A08500914D48 /* NSObject+Abstract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Abstract.m"; sourceTree = "<group>"; };
+		99F84CB017D0A8EE00914D48 /* TGRFetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRFetchedResultsTableViewController.h; sourceTree = "<group>"; };
+		99F84CB117D0A8EE00914D48 /* TGRFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRFetchedResultsTableViewController.m; sourceTree = "<group>"; };
 		99FA797117CCE2610067BDCC /* TGRBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBook.h; sourceTree = "<group>"; };
 		99FA797217CCE2610067BDCC /* TGRBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBook.m; sourceTree = "<group>"; };
 		99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCatalog.h; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 			children = (
 				99E73B5F17CDF6EC00FE1C29 /* TGRBookSearchController.h */,
 				99E73B6017CDF6EC00FE1C29 /* TGRBookSearchController.m */,
+				99F84CB017D0A8EE00914D48 /* TGRFetchedResultsTableViewController.h */,
+				99F84CB117D0A8EE00914D48 /* TGRFetchedResultsTableViewController.m */,
 				99E73B7F17CE2B6F00FE1C29 /* TGRBookListViewController.h */,
 				99E73B8017CE2B6F00FE1C29 /* TGRBookListViewController.m */,
 				99E73B8117CE2B6F00FE1C29 /* TGRBookListViewController.xib */,
@@ -500,6 +505,7 @@
 				99F84CA917D09D7C00914D48 /* TGRFetchedResultsControllerDataSource.m in Sources */,
 				99F84CAC17D09DE200914D48 /* TGRDataSource.m in Sources */,
 				99F84CAF17D0A08500914D48 /* NSObject+Abstract.m in Sources */,
+				99F84CB217D0A8EE00914D48 /* TGRFetchedResultsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
