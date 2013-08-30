@@ -11,11 +11,24 @@
 #import "TGRBookViewController.h"
 #import "TGRReadingList.h"
 #import "TGRBook.h"
+#import "TGRFetchedResultsControllerDataSource.h"
+#import "TGRBookCell.h"
+
+typedef NS_ENUM(NSInteger, TGRBookListSortOrder) {
+    TGRBookListSortOrderTitle = 0,
+    TGRBookListSortOrderAuthor,
+    TGRBookListSortOrderCategory
+};
+
+static NSString *const kCellIdentifier = @"BookCell";
 
 @interface TGRBookListViewController ()
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (strong, nonatomic) TGRBookSearchController *bookSearchController;
+
+- (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender;
 
 @end
 
@@ -35,93 +48,56 @@
 
     self.title = NSLocalizedString(@"Reading List", @"");
 
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TGRBookCell class]) bundle:nil]
+         forCellReuseIdentifier:kCellIdentifier];
+    self.tableView.sectionIndexMinimumDisplayRowCount = INT_MAX;
+
     [self setupSearchBar];
     [self setupBookSearchController];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 
-#pragma mark - Table view data source
+    [self setupToolbar:animated];
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    if (!self.dataSource) {
+        [self setSortOrder:TGRBookListSortOrderTitle];
     }
-
-    // Configure the cell...
-
-    return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    [self.navigationController setToolbarHidden:YES animated:animated];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSManagedObject *item = [self.dataSource itemAtIndexPath:indexPath];
+    TGRBook *book = [MTLManagedObjectAdapter modelOfClass:[TGRBook class] fromManagedObject:item error:NULL];
+
+    TGRBookViewController *bookViewController = [[TGRBookViewController alloc] initWithBook:book readingList:self.readingList];
+    [self.navigationController pushViewController:bookViewController animated:YES];
+}
+
+#pragma mark - NSFetchedResultsControllerDelegate methods
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    // Deactivate search when a book is saved or removed
+    if (self.bookSearchController.searchDisplayController.active) {
+        [self.bookSearchController.searchDisplayController setActive:NO animated:YES];
+    }
+
+    [super controllerDidChangeContent:controller];
 }
 
 #pragma mark - Private methods
+
+- (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
+    [self setSortOrder:(TGRBookListSortOrder) sender.selectedSegmentIndex];
+}
 
 - (void)setupSearchBar {
     self.searchBar.placeholder = NSLocalizedString(@"Search iBooks Store", @"");
@@ -143,6 +119,49 @@
         TGRBookViewController *bookViewController = [[TGRBookViewController alloc] initWithBook:book readingList:readingList];
         [navigationController pushViewController:bookViewController animated:YES];
     }];
+}
+
+- (void)setupToolbar:(BOOL)animated {
+    if (!self.toolbarItems) {
+        self.toolbarItems = @[
+                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                              target:nil action:nil],
+                [[UIBarButtonItem alloc] initWithCustomView:self.segmentedControl],
+                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                              target:nil action:nil]
+        ];
+    }
+
+    if ([self.navigationController isToolbarHidden]) {
+        [self.navigationController setToolbarHidden:NO animated:animated];
+    }
+}
+
+- (void)setSortOrder:(TGRBookListSortOrder)sortOrder {
+    NSDictionary *sortDescriptors = @{
+            @(TGRBookListSortOrderTitle) : @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]],
+            @(TGRBookListSortOrderAuthor) : @[[NSSortDescriptor sortDescriptorWithKey:@"author" ascending:YES]],
+            @(TGRBookListSortOrderCategory) : @[[NSSortDescriptor sortDescriptorWithKey:@"category" ascending:YES]]
+    };
+    NSDictionary *sectionNameKeyPaths = @{
+            @(TGRBookListSortOrderCategory) : @"category"
+    };
+    
+    NSFetchRequest *fetchRequest = [TGRReadingList fetchRequest];
+    fetchRequest.sortDescriptors = sortDescriptors[@(sortOrder)];
+    
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                                               managedObjectContext:self.readingList.managedObjectContext
+                                                                                                 sectionNameKeyPath:sectionNameKeyPaths[@(sortOrder)]
+                                                                                                          cacheName:nil];
+    TGRDataSourceConfigureCellBlock configureCellBlock = ^(TGRBookCell *cell, NSManagedObject *item) {
+        TGRBook *book = [MTLManagedObjectAdapter modelOfClass:[TGRBook class] fromManagedObject:item error:NULL];
+        [cell configureWithBook:book];
+    };
+    
+    self.dataSource = [TGRFetchedResultsControllerDataSource dataSourceWithFetchedResultsController:fetchedResultsController
+                                                                                     cellIdentifier:kCellIdentifier
+                                                                                 configureCellBlock:configureCellBlock];
 }
 
 @end
