@@ -11,7 +11,9 @@
 @interface TGRFetchedResultsTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) TGRFetchedResultsControllerDataSource *dataSource;
-@property (nonatomic) BOOL ignoreContentChanges;
+
+// Maximum number of changes in the fetched results controller that will be animated. Default is 25.
+@property (nonatomic) NSUInteger contentAnimationMaximumChangeCount;
 
 - (void)performFetch;
 
