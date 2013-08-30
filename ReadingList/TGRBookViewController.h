@@ -7,11 +7,13 @@
 //
 
 @class TGRBook;
+@class TGRReadingList;
 
 @interface TGRBookViewController : UIViewController
 
 @property (copy, nonatomic, readonly) TGRBook *book;
+@property (strong, nonatomic, readonly) TGRReadingList *readingList;
 
-- (id)initWithBook:(TGRBook *)book;
+- (id)initWithBook:(TGRBook *)book readingList:(TGRReadingList *)readingList;
 
 @end

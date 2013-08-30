@@ -9,6 +9,7 @@
 #import "TGRBookListViewController.h"
 #import "TGRBookSearchController.h"
 #import "TGRBookViewController.h"
+#import "TGRReadingList.h"
 #import "TGRBook.h"
 
 @interface TGRBookListViewController ()
@@ -19,6 +20,15 @@
 @end
 
 @implementation TGRBookListViewController
+
+- (id)initWithReadingList:(TGRReadingList *)readingList {
+    self = [super init];
+    if (self) {
+        _readingList = readingList;
+    }
+
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -127,9 +137,10 @@
 
 - (void)setupBookSearchController {
     UINavigationController *navigationController = self.navigationController;
+    TGRReadingList *readingList = self.readingList;
 
     self.bookSearchController = [[TGRBookSearchController alloc] initWithSearchBar:self.searchBar contentsController:self didSelectBookBlock:^(TGRBook *book) {
-        TGRBookViewController *bookViewController = [[TGRBookViewController alloc] initWithBook:book];
+        TGRBookViewController *bookViewController = [[TGRBookViewController alloc] initWithBook:book readingList:readingList];
         [navigationController pushViewController:bookViewController animated:YES];
     }];
 }
