@@ -82,6 +82,17 @@ static NSString *const kCellIdentifier = @"BookCell";
     [self.navigationController pushViewController:bookViewController animated:YES];
 }
 
+#pragma mark - NSFetchedResultsControllerDelegate methods
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    // Deactivate search when a book is saved or removed
+    if (self.bookSearchController.searchDisplayController.active) {
+        [self.bookSearchController.searchDisplayController setActive:NO animated:YES];
+    }
+
+    [super controllerDidChangeContent:controller];
+}
+
 #pragma mark - Private methods
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
