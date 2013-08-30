@@ -60,6 +60,13 @@ static const int kBatchSize = 40;
     return _persistentStoreCoordinator;
 }
 
++ (NSFetchRequest *)fetchRequest {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[TGRBook managedObjectEntityName]];
+    [fetchRequest setFetchBatchSize:kBatchSize];
+
+    return fetchRequest;
+}
+
 - (id)initWithFile:(NSString *)path {
     self = [super init];
 
@@ -78,9 +85,13 @@ static const int kBatchSize = 40;
 }
 
 - (BOOL)saveBook:(TGRBook *)book error:(NSError * __autoreleasing *)error {
-    [MTLManagedObjectAdapter managedObjectFromModel:book insertingIntoContext:self.managedObjectContext error:error];
+    NSManagedObject *managedBook = [MTLManagedObjectAdapter managedObjectFromModel:book insertingIntoContext:self.managedObjectContext error:error];
 
     if (*error == nil) {
+        if (book.genres.count > 0) {
+            [managedBook setValue:book.genres[0] forKey:@"category"];
+        }
+
         return [self.managedObjectContext save:error];
     }
 
@@ -100,13 +111,6 @@ static const int kBatchSize = 40;
 }
 
 #pragma mark - Private methods
-
-+ (NSFetchRequest *)fetchRequest {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[TGRBook managedObjectEntityName]];
-    [fetchRequest setFetchBatchSize:kBatchSize];
-
-    return fetchRequest;
-}
 
 + (NSFetchRequest *)fetchRequestForBookWithIdentifier:(NSNumber *)identifier {
     static dispatch_once_t onceToken;

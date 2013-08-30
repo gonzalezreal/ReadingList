@@ -6,9 +6,11 @@
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
+#import "TGRFetchedResultsTableViewController.h"
+
 @class TGRReadingList;
 
-@interface TGRBookListViewController : UITableViewController
+@interface TGRBookListViewController : TGRFetchedResultsTableViewController
 
 @property (strong, nonatomic, readonly) TGRReadingList *readingList;
 
