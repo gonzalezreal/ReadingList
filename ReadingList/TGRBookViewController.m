@@ -11,6 +11,7 @@
 
 #import "UIImageView+AFNetworking.h"
 #import "UIView+FrameAdditions.h"
+#import "TGRReadingList.h"
 
 static NSString *const kBookDescriptionFormat = @"<html>"
         "<style type=\"text/css\">"
@@ -34,10 +35,11 @@ static NSString *const kBookDescriptionFormat = @"<html>"
 
 @implementation TGRBookViewController
 
-- (id)initWithBook:(TGRBook *)book {
+- (id)initWithBook:(TGRBook *)book readingList:(TGRReadingList *)readingList {
     self = [super init];
     if (self) {
         _book = [book copy];
+        _readingList = readingList;
     }
 
     return self;
@@ -48,6 +50,7 @@ static NSString *const kBookDescriptionFormat = @"<html>"
 
     self.title = NSLocalizedString(@"Info", @"");
 
+    [self setupRightBarButtonItem];
     [self setupViews];
 }
 
@@ -63,6 +66,29 @@ static NSString *const kBookDescriptionFormat = @"<html>"
 }
 
 #pragma mark - Private methods
+
+- (void)setupRightBarButtonItem {
+    if ([self.readingList containsBook:self.book]) {
+        [self showRemoveButtonAnimated:NO];
+    }
+    else {
+        [self showSaveButtonAnimated:NO];
+    }
+}
+
+- (void)showRemoveButtonAnimated:(BOOL)animated {
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Remove", @"")
+                                                                   style:UIBarButtonItemStyleBordered
+                                                                  target:self action:@selector(removeBook)];
+    [self.navigationItem setRightBarButtonItem:buttonItem animated:animated];
+}
+
+- (void)showSaveButtonAnimated:(BOOL)animated {
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                                target:self
+                                                                                action:@selector(saveBook)];
+    [self.navigationItem setRightBarButtonItem:buttonItem animated:animated];
+}
 
 - (void)setupViews {
     [self.coverImageView setImageWithURL:self.book.bigCoverURL];
@@ -102,6 +128,26 @@ static NSString *const kBookDescriptionFormat = @"<html>"
 - (void)layoutDescription {
     self.descriptionView.$height = [[self.descriptionView stringByEvaluatingJavaScriptFromString:@"document.documentElement.scrollHeight;"] floatValue];
     self.scrollView.contentSize = (CGSize) { .width = self.view.$width, .height = self.descriptionView.$bottom };
+}
+
+- (void)saveBook {
+    NSError *error = nil;
+    if ([self.readingList saveBook:self.book error:&error]) {
+        [self showRemoveButtonAnimated:YES];
+    }
+    else {
+        NSLog(@"*** Couldn't add the book. Error: %@", [error localizedDescription]);
+    }
+}
+
+- (void)removeBook {
+    NSError *error = nil;
+    if ([self.readingList removeBook:self.book error:&error]) {
+        [self showSaveButtonAnimated:YES];
+    }
+    else {
+        NSLog(@"*** Couldn't remove the book. Error: %@", [error localizedDescription]);
+    }
 }
 
 @end

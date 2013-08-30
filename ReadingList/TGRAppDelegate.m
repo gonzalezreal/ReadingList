@@ -9,17 +9,25 @@
 #import "TGRAppDelegate.h"
 #import "TGRBookListViewController.h"
 #import "AFNetworkActivityIndicatorManager.h"
+#import "TGRReadingList.h"
 
 @implementation TGRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    TGRBookListViewController *bookListViewController = [[TGRBookListViewController alloc] init];
+    // Create the reading list
+    NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    filePath = [filePath stringByAppendingPathComponent:@"MyReadingList"];
+    self.readingList = [[TGRReadingList alloc] initWithFile:filePath];
+
+    // Create the book list view controller
+    TGRBookListViewController *bookListViewController = [[TGRBookListViewController alloc] initWithReadingList:self.readingList];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:bookListViewController];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
 
+    // Enable network activity indicator
     AFNetworkActivityIndicatorManager.sharedManager.enabled = YES;
 
     return YES;

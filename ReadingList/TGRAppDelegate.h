@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class TGRReadingList;
+
 @interface TGRAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) TGRReadingList *readingList;
 
 @end

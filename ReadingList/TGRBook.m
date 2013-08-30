@@ -15,6 +15,8 @@
     return [NSURL URLWithString:bigCoverURL];
 }
 
+#pragma mark - JSON serialization
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
             @"author" : @"artistName",
@@ -41,6 +43,22 @@
 }
 
 + (NSValueTransformer *)coverURLJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
+#pragma mark - Managed object serialization
+
++ (NSString *)managedObjectEntityName {
+    return @"Book";
+}
+
++ (NSDictionary *)managedObjectKeysByPropertyKey {
+    return @{
+            @"coverURL" : @"coverLink"
+    };
+}
+
++ (NSValueTransformer *)coverURLEntityAttributeTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
