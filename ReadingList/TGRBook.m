@@ -59,7 +59,7 @@
 }
 
 + (NSValueTransformer *)coverURLEntityAttributeTransformer {
-    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+    return [[NSValueTransformer valueTransformerForName:MTLURLValueTransformerName] mtl_invertedTransformer];
 }
 
 @end

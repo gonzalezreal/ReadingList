@@ -13,6 +13,8 @@
 @property (copy, nonatomic, readonly) NSString *filePath;
 @property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
++ (NSFetchRequest *)fetchRequest;
+
 - (id)initWithFile:(NSString *)path;
 
 - (BOOL)containsBook:(TGRBook *)book;

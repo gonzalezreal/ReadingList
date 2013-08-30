@@ -8,13 +8,6 @@
 
 #import "TGRArrayDataSource.h"
 
-@interface TGRArrayDataSource ()
-
-@property (copy, nonatomic, readonly) NSString *cellIdentifier;
-@property (copy, nonatomic, readonly) TGRDataSourceConfigureCellBlock configureCellBlock;
-
-@end
-
 @implementation TGRArrayDataSource
 
 + (instancetype)dataSourceWithItems:(NSArray *)items cellIdentifier:(NSString *)cellIdentifier configureCellBlock:(TGRDataSourceConfigureCellBlock)configureCellBlock {
@@ -22,14 +15,10 @@
 }
 
 - (id)initWithItems:(NSArray *)items cellIdentifier:(NSString *)cellIdentifier configureCellBlock:(TGRDataSourceConfigureCellBlock)configureCellBlock {
-    NSParameterAssert(configureCellBlock);
-
-    self = [super init];
+    self = [super initWithCellIdentifier:cellIdentifier configureCellBlock:configureCellBlock];
 
     if (self) {
         _items = [items copy];
-        _cellIdentifier = [cellIdentifier copy];
-        _configureCellBlock = [configureCellBlock copy];
     }
 
     return self;
@@ -43,14 +32,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.items.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
-    id item = [self itemAtIndexPath:indexPath];
-    self.configureCellBlock(cell, item);
-
-    return cell;
 }
 
 @end

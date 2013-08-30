@@ -134,6 +134,7 @@ static NSString *const kBookDescriptionFormat = @"<html>"
     NSError *error = nil;
     if ([self.readingList saveBook:self.book error:&error]) {
         [self showRemoveButtonAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else {
         NSLog(@"*** Couldn't add the book. Error: %@", [error localizedDescription]);
@@ -144,6 +145,7 @@ static NSString *const kBookDescriptionFormat = @"<html>"
     NSError *error = nil;
     if ([self.readingList removeBook:self.book error:&error]) {
         [self showSaveButtonAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else {
         NSLog(@"*** Couldn't remove the book. Error: %@", [error localizedDescription]);
