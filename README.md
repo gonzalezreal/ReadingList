@@ -25,4 +25,4 @@ ReadingList uses some techniques and patterns that are worth mentioning:
 [Guillermo Gonzalez](http://github.com/gonzalezreal)  
 [@gonzalezreal](https://twitter.com/gonzalezreal)
 ## License
-Overcoat is available under the MIT license. See [LICENSE.md](https://github.com/gonzalezreal/ReadingList/blob/master/LICENSE).
+ReadingList is available under the MIT license. See [LICENSE.md](https://github.com/gonzalezreal/ReadingList/blob/master/LICENSE).
