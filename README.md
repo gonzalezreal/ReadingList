@@ -1,8 +1,8 @@
 # ReadingList
-ReadingList is a sample application that shows how to create a Web Service Client and the corresponding model layer using [Mantle Modeling Framework](https://github.com/github/Mantle) and the [Overcoat](https://github.com/gonzalezreal/Overcoat) AFNetworking extension.
-Specifically, ReadingList allows you to search for books in the iBooks Store and save them in a local database. It won't get an Apple Design Award, but it is a fairly complete real life example.
+**ReadingList** is a sample application that shows how to create a Web Service Client and the corresponding model layer using [Mantle Modeling Framework](https://github.com/github/Mantle) and the [Overcoat](https://github.com/gonzalezreal/Overcoat) AFNetworking extension.
+Specifically, ReadingList allows you to search for books in the **iBooks Store** and save them in a local database. It won't get an Apple Design Award, but it is a fairly complete real life example.
 ## Installation
-In order to build and run ReadingList, you must install first project dependencies via CocoaPods. To do so:
+In order to build and run ReadingList, you must install first project dependencies via **CocoaPods**. To do so:
 ```
 $ gem install cocoapods # If necessary
 $ cd ReadingList
@@ -14,7 +14,7 @@ The best place to start understanding this sample is the `TGRBook` class, which 
 `TGRBook` also implements `MTLJSONSerializing` and `MTLManagedObjectSerializing` to allow **JSON** and **Core Data** entity serialization respectively.
 ## The Web Service
 ReadingList book search functionality is built around the [iTunes Search Web Service](http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html).
-`TGRBookCatalog` is an `OVCClient` subclass that implements the book search method.
+`TGRBookCatalog` is the `OVCClient` subclass that implements this functionality with a few lines of code.
 ## Other Goodies
 ReadingList uses some techniques and patterns that are worth mentioning:
 * `TGRBookSearchController` shows how to separate search UI functionality from the View Controller.
