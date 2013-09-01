@@ -39,6 +39,7 @@
 		99F84CB217D0A8EE00914D48 /* TGRFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F84CB117D0A8EE00914D48 /* TGRFetchedResultsTableViewController.m */; };
 		99FA797317CCE2610067BDCC /* TGRBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797217CCE2610067BDCC /* TGRBook.m */; };
 		99FA797617CCEC6A0067BDCC /* TGRBookCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */; };
+		AF477CDA303B443CAB324469 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D37C82232BA842FB867F3743 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		99FA797217CCE2610067BDCC /* TGRBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBook.m; sourceTree = "<group>"; };
 		99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookCatalog.h; sourceTree = "<group>"; };
 		99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookCatalog.m; sourceTree = "<group>"; };
+		D37C82232BA842FB867F3743 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9930A88A07F49979AE263C6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,7 @@
 				99913E0A17CB8834004E8C2C /* UIKit.framework in Frameworks */,
 				99913E0C17CB8834004E8C2C /* Foundation.framework in Frameworks */,
 				99913E0E17CB8834004E8C2C /* CoreGraphics.framework in Frameworks */,
+				AF477CDA303B443CAB324469 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +140,7 @@
 				99913E3917CB8835004E8C2C /* ReadingListTests */,
 				99913E0817CB8834004E8C2C /* Frameworks */,
 				99913E0717CB8834004E8C2C /* Products */,
+				E9930A88A07F49979AE263C6 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +161,7 @@
 				99913E0B17CB8834004E8C2C /* Foundation.framework */,
 				99913E0D17CB8834004E8C2C /* CoreGraphics.framework */,
 				99913E3317CB8835004E8C2C /* SenTestingKit.framework */,
+				D37C82232BA842FB867F3743 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -272,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99913E4417CB8835004E8C2C /* Build configuration list for PBXNativeTarget "ReadingList" */;
 			buildPhases = (
+				E1E261A690074AF9BAE647FF /* Check Pods Manifest.lock */,
 				99913E0217CB8834004E8C2C /* Sources */,
 				99913E0317CB8834004E8C2C /* Frameworks */,
 				99913E0417CB8834004E8C2C /* Resources */,
+				B92EC84D984740F886828EE2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,6 +378,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		B92EC84D984740F886828EE2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1E261A690074AF9BAE647FF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -493,11 +531,11 @@
 		};
 		99913E4517CB8835004E8C2C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9930A88A07F49979AE263C6 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReadingList/ReadingList-Prefix.pch";
 				INFOPLIST_FILE = "ReadingList/ReadingList-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -505,11 +543,11 @@
 		};
 		99913E4617CB8835004E8C2C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9930A88A07F49979AE263C6 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReadingList/ReadingList-Prefix.pch";
 				INFOPLIST_FILE = "ReadingList/ReadingList-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
