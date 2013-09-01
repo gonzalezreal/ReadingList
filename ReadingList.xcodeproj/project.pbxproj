@@ -21,17 +21,10 @@
 		99913E3617CB8835004E8C2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E0B17CB8834004E8C2C /* Foundation.framework */; };
 		99913E3E17CB8835004E8C2C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99913E3C17CB8835004E8C2C /* InfoPlist.strings */; };
 		99913E4117CB8835004E8C2C /* ReadingListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99913E4017CB8835004E8C2C /* ReadingListTests.m */; };
-		99913E5E17CB8D69004E8C2C /* libOvercoat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E5517CB8BED004E8C2C /* libOvercoat.a */; };
-		99913E6017CB8D69004E8C2C /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E5F17CB8D69004E8C2C /* libMantle.a */; };
-		99913E6217CB8D7C004E8C2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6117CB8D7C004E8C2C /* Security.framework */; };
-		99913E6417CB8D84004E8C2C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6317CB8D84004E8C2C /* MobileCoreServices.framework */; };
-		99913E6617CB8D8E004E8C2C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E6517CB8D8E004E8C2C /* SystemConfiguration.framework */; };
 		99E73B6117CDF6EC00FE1C29 /* TGRBookSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73B6017CDF6EC00FE1C29 /* TGRBookSearchController.m */; };
 		99E73B6717CDF88400FE1C29 /* TGRArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73B6617CDF88400FE1C29 /* TGRArrayDataSource.m */; };
 		99E73B8217CE2B6F00FE1C29 /* TGRBookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73B8017CE2B6F00FE1C29 /* TGRBookListViewController.m */; };
 		99E73B8317CE2B6F00FE1C29 /* TGRBookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E73B8117CE2B6F00FE1C29 /* TGRBookListViewController.xib */; };
-		99E73BBF17CE33EC00FE1C29 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E73BBE17CE33EB00FE1C29 /* Accounts.framework */; };
-		99E73BC117CE33F500FE1C29 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E73BC017CE33F500FE1C29 /* Social.framework */; };
 		99E73BC517CE392D00FE1C29 /* TGRBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E73BC317CE392D00FE1C29 /* TGRBookViewController.m */; };
 		99E73BC617CE392D00FE1C29 /* TGRBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E73BC417CE392D00FE1C29 /* TGRBookViewController.xib */; };
 		99E73BC917CE3F6E00FE1C29 /* TGRBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E73BC817CE3F6E00FE1C29 /* TGRBookCell.xib */; };
@@ -56,41 +49,6 @@
 			remoteGlobalIDString = 99913E0517CB8834004E8C2C;
 			remoteInfo = ReadingList;
 		};
-		99913E5417CB8BED004E8C2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99913E4A17CB8BEC004E8C2C /* Overcoat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 99663E0F173BAD1D0090F0E6;
-			remoteInfo = "Overcoat iOS";
-		};
-		99913E5617CB8BED004E8C2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99913E4A17CB8BEC004E8C2C /* Overcoat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 99663E20173BAD1D0090F0E6;
-			remoteInfo = "Overcoat iOS Tests";
-		};
-		99913E5817CB8BED004E8C2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99913E4A17CB8BEC004E8C2C /* Overcoat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 994B286917463C9A003E487E;
-			remoteInfo = "Overcoat Mac";
-		};
-		99913E5A17CB8BED004E8C2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99913E4A17CB8BEC004E8C2C /* Overcoat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 994B287F17463C9A003E487E;
-			remoteInfo = "Overcoat Mac Tests";
-		};
-		99913E5C17CB8D45004E8C2C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99913E4A17CB8BEC004E8C2C /* Overcoat.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 99663E0E173BAD1D0090F0E6;
-			remoteInfo = "Overcoat iOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -113,11 +71,6 @@
 		99913E3D17CB8835004E8C2C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		99913E3F17CB8835004E8C2C /* ReadingListTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingListTests.h; sourceTree = "<group>"; };
 		99913E4017CB8835004E8C2C /* ReadingListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadingListTests.m; sourceTree = "<group>"; };
-		99913E4A17CB8BEC004E8C2C /* Overcoat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Overcoat.xcodeproj; path = Overcoat/Overcoat.xcodeproj; sourceTree = "<group>"; };
-		99913E5F17CB8D69004E8C2C /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Overcoat/Mantle/build/Release-iphoneos/libMantle.a"; sourceTree = "<group>"; };
-		99913E6117CB8D7C004E8C2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		99913E6317CB8D84004E8C2C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		99913E6517CB8D8E004E8C2C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		99E73B5F17CDF6EC00FE1C29 /* TGRBookSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookSearchController.h; sourceTree = "<group>"; };
 		99E73B6017CDF6EC00FE1C29 /* TGRBookSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookSearchController.m; sourceTree = "<group>"; };
 		99E73B6517CDF88400FE1C29 /* TGRArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRArrayDataSource.h; sourceTree = "<group>"; };
@@ -125,8 +78,6 @@
 		99E73B7F17CE2B6F00FE1C29 /* TGRBookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookListViewController.h; sourceTree = "<group>"; };
 		99E73B8017CE2B6F00FE1C29 /* TGRBookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookListViewController.m; sourceTree = "<group>"; };
 		99E73B8117CE2B6F00FE1C29 /* TGRBookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGRBookListViewController.xib; sourceTree = "<group>"; };
-		99E73BBE17CE33EB00FE1C29 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		99E73BC017CE33F500FE1C29 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		99E73BC217CE392D00FE1C29 /* TGRBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookViewController.h; sourceTree = "<group>"; };
 		99E73BC317CE392D00FE1C29 /* TGRBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookViewController.m; sourceTree = "<group>"; };
 		99E73BC417CE392D00FE1C29 /* TGRBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGRBookViewController.xib; sourceTree = "<group>"; };
@@ -159,16 +110,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				99F84CA617D07A2300914D48 /* CoreData.framework in Frameworks */,
-				99913E6017CB8D69004E8C2C /* libMantle.a in Frameworks */,
-				99913E5E17CB8D69004E8C2C /* libOvercoat.a in Frameworks */,
-				99913E6617CB8D8E004E8C2C /* SystemConfiguration.framework in Frameworks */,
-				99913E6417CB8D84004E8C2C /* MobileCoreServices.framework in Frameworks */,
-				99913E6217CB8D7C004E8C2C /* Security.framework in Frameworks */,
 				99913E0A17CB8834004E8C2C /* UIKit.framework in Frameworks */,
 				99913E0C17CB8834004E8C2C /* Foundation.framework in Frameworks */,
 				99913E0E17CB8834004E8C2C /* CoreGraphics.framework in Frameworks */,
-				99E73BC117CE33F500FE1C29 /* Social.framework in Frameworks */,
-				99E73BBF17CE33EC00FE1C29 /* Accounts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,14 +151,7 @@
 		99913E0817CB8834004E8C2C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				99913E4A17CB8BEC004E8C2C /* Overcoat.xcodeproj */,
-				99913E5F17CB8D69004E8C2C /* libMantle.a */,
 				99F84CA517D07A2300914D48 /* CoreData.framework */,
-				99E73BC017CE33F500FE1C29 /* Social.framework */,
-				99E73BBE17CE33EB00FE1C29 /* Accounts.framework */,
-				99913E6517CB8D8E004E8C2C /* SystemConfiguration.framework */,
-				99913E6317CB8D84004E8C2C /* MobileCoreServices.framework */,
-				99913E6117CB8D7C004E8C2C /* Security.framework */,
 				99913E0917CB8834004E8C2C /* UIKit.framework */,
 				99913E0B17CB8834004E8C2C /* Foundation.framework */,
 				99913E0D17CB8834004E8C2C /* CoreGraphics.framework */,
@@ -268,17 +205,6 @@
 				99913E3C17CB8835004E8C2C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		99913E4B17CB8BEC004E8C2C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				99913E5517CB8BED004E8C2C /* libOvercoat.a */,
-				99913E5717CB8BED004E8C2C /* Overcoat iOS Tests.octest */,
-				99913E5917CB8BED004E8C2C /* Overcoat.framework */,
-				99913E5B17CB8BED004E8C2C /* Overcoat Mac Tests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		99E73B7C17CE2AE300FE1C29 /* Utilities */ = {
@@ -353,7 +279,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				99913E5D17CB8D45004E8C2C /* PBXTargetDependency */,
 			);
 			name = ReadingList;
 			productName = ReadingList;
@@ -399,12 +324,6 @@
 			mainGroup = 99913DFD17CB8834004E8C2C;
 			productRefGroup = 99913E0717CB8834004E8C2C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 99913E4B17CB8BEC004E8C2C /* Products */;
-					ProjectRef = 99913E4A17CB8BEC004E8C2C /* Overcoat.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				99913E0517CB8834004E8C2C /* ReadingList */,
@@ -412,37 +331,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		99913E5517CB8BED004E8C2C /* libOvercoat.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libOvercoat.a;
-			remoteRef = 99913E5417CB8BED004E8C2C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		99913E5717CB8BED004E8C2C /* Overcoat iOS Tests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Overcoat iOS Tests.octest";
-			remoteRef = 99913E5617CB8BED004E8C2C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		99913E5917CB8BED004E8C2C /* Overcoat.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Overcoat.framework;
-			remoteRef = 99913E5817CB8BED004E8C2C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		99913E5B17CB8BED004E8C2C /* Overcoat Mac Tests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Overcoat Mac Tests.octest";
-			remoteRef = 99913E5A17CB8BED004E8C2C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		99913E0417CB8834004E8C2C /* Resources */ = {
@@ -525,11 +413,6 @@
 			target = 99913E0517CB8834004E8C2C /* ReadingList */;
 			targetProxy = 99913E3717CB8835004E8C2C /* PBXContainerItemProxy */;
 		};
-		99913E5D17CB8D45004E8C2C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Overcoat iOS";
-			targetProxy = 99913E5C17CB8D45004E8C2C /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -577,11 +460,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"Overcoat/AFNetworking/**",
-					"Overcoat/Mantle/Mantle/**",
-					"$(inherited)",
-				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -606,11 +484,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"Overcoat/AFNetworking/**",
-					"Overcoat/Mantle/Mantle/**",
-					"$(inherited)",
-				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
