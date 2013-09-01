@@ -1,6 +1,9 @@
 # ReadingList
 **ReadingList** is a sample application that shows how to create a Web Service Client and the corresponding model layer using [Mantle Modeling Framework](https://github.com/github/Mantle) and the [Overcoat](https://github.com/gonzalezreal/Overcoat) AFNetworking extension.
 Specifically, ReadingList allows you to search for books in the **iBooks Store** and save them in a local database. It won't get an Apple Design Award, but it is a fairly complete real life example.
+
+<img src="https://raw.github.com/gonzalezreal/ReadingList/master/Screenshots/screenshot-1.jpg" alt="Reading list" width="320" height="480" /><img src="https://raw.github.com/gonzalezreal/ReadingList/master/Screenshots/screenshot-2.jpg" alt="Book detail" width="320" height="480" /><img src="https://raw.github.com/gonzalezreal/ReadingList/master/Screenshots/screenshot-3.jpg" alt="Book search" width="320" height="480" />
+
 ## Installation
 In order to build and run ReadingList, you must install first project dependencies via **CocoaPods**. To do so:
 ```
