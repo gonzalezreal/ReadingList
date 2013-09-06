@@ -19,17 +19,13 @@
     NSParameterAssert(term);
     NSParameterAssert(block);
 
-    OVCQuery *query = [OVCQuery queryWithMethod:OVCQueryMethodGet
-                                           path:@"search"
-                                     parameters:@{
-                                             @"term" : term,
-                                             @"entity" : @"ebook"
-                                     }
-                                     modelClass:[TGRBook class]
-                                  objectKeyPath:@"results"];
+    NSDictionary *parameters = @{
+            @"term" : term,
+            @"entity" : @"ebook"
+    };
 
-    [self executeQuery:query completionBlock:^(OVCRequestOperation *operation, id object, NSError *error) {
-        block(object, error);
+    [self GET:@"search" parameters:parameters resultClass:TGRBook.class resultKeyPath:@"results" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        block(responseObject, error);
     }];
 }
 
