@@ -22,20 +22,20 @@ PODS:
   - Mantle (1.3.1):
     - Mantle/extobjc
   - Mantle/extobjc (1.3.1)
-  - Overcoat (1.2-RC1):
+  - Overcoat (1.2):
     - AFNetworking (~> 2.0)
     - Mantle (~> 1.3)
 
 DEPENDENCIES:
-  - Overcoat (from `https://raw.github.com/gonzalezreal/Overcoat/afnetworking-2.0/Overcoat.podspec`)
+  - Overcoat (from `https://raw.github.com/gonzalezreal/Overcoat/master/Overcoat.podspec`)
 
 EXTERNAL SOURCES:
   Overcoat:
-    :podspec: https://raw.github.com/gonzalezreal/Overcoat/afnetworking-2.0/Overcoat.podspec
+    :podspec: https://raw.github.com/gonzalezreal/Overcoat/master/Overcoat.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: a6f11ac4ac087303e6ff87adc1ba57b0dac20ef8
   Mantle: abc3b0c81bc66eb624cf9cebb8640e377d5a44ae
-  Overcoat: a7167936bbc1949ccd570ca03adccfe98fa7b5fa
+  Overcoat: 39441a71013a1fb769542ccfd7b2487fb90e9c13
 
 COCOAPODS: 0.25.0
