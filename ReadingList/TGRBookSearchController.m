@@ -19,6 +19,7 @@ static NSString *const kCellIdentifier = @"SearchResultCell";
 @property (copy, nonatomic, readonly) TGRBookBlock didSelectBookBlock;
 @property (strong, nonatomic) TGRArrayDataSource *dataSource;
 @property (strong, nonatomic) TGRBookCatalog *bookCatalog;
+@property (nonatomic) BOOL shouldShowToolbar;
 
 @end
 
@@ -50,12 +51,22 @@ static NSString *const kCellIdentifier = @"SearchResultCell";
 
 - (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller {
     self.bookCatalog = [[TGRBookCatalog alloc] init];
+    
+    if (!controller.searchContentsController.navigationController.toolbarHidden) {
+        [controller.searchContentsController.navigationController setToolbarHidden:YES animated:YES];
+        self.shouldShowToolbar = YES;
+    }
 }
 
 - (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 
     [self.bookCatalog.operationQueue cancelAllOperations];
+    
+    if (self.shouldShowToolbar) {
+        [controller.searchContentsController.navigationController setToolbarHidden:NO animated:YES];
+        self.shouldShowToolbar = NO;
+    }
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView {

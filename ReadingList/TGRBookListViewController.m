@@ -82,17 +82,6 @@ static NSString *const kCellIdentifier = @"BookCell";
     [self.navigationController pushViewController:bookViewController animated:YES];
 }
 
-#pragma mark - NSFetchedResultsControllerDelegate methods
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    // Deactivate search when a book is saved or removed
-    if (self.bookSearchController.searchDisplayController.active) {
-        [self.bookSearchController.searchDisplayController setActive:NO animated:YES];
-    }
-
-    [super controllerDidChangeContent:controller];
-}
-
 #pragma mark - Private methods
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
@@ -132,7 +121,7 @@ static NSString *const kCellIdentifier = @"BookCell";
         ];
     }
 
-    if ([self.navigationController isToolbarHidden]) {
+    if (self.navigationController.toolbarHidden && !self.bookSearchController.searchDisplayController.active) {
         [self.navigationController setToolbarHidden:NO animated:animated];
     }
 }
