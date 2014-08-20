@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
-@interface TGRBookCatalog : OVCClient
+#import <Overcoat/Overcoat.h>
+
+@interface TGRBookCatalog : OVCHTTPSessionManager
 
 - (void)searchBooksWithTerm:(NSString *)term completionBlock:(void (^)(NSArray *results, NSError *error))block;
 

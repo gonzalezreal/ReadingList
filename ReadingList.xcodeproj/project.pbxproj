@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		871B48E819A43F4200BA5F12 /* TGRBookResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 871B48E719A43F4200BA5F12 /* TGRBookResponse.m */; };
 		99913E0A17CB8834004E8C2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E0917CB8834004E8C2C /* UIKit.framework */; };
 		99913E0C17CB8834004E8C2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E0B17CB8834004E8C2C /* Foundation.framework */; };
 		99913E0E17CB8834004E8C2C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99913E0D17CB8834004E8C2C /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		871B48E619A43F4200BA5F12 /* TGRBookResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRBookResponse.h; sourceTree = "<group>"; };
+		871B48E719A43F4200BA5F12 /* TGRBookResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRBookResponse.m; sourceTree = "<group>"; };
 		99913E0617CB8834004E8C2C /* ReadingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99913E0917CB8834004E8C2C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		99913E0B17CB8834004E8C2C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -237,6 +240,8 @@
 				99FA797217CCE2610067BDCC /* TGRBook.m */,
 				99FA797417CCEC6A0067BDCC /* TGRBookCatalog.h */,
 				99FA797517CCEC6A0067BDCC /* TGRBookCatalog.m */,
+				871B48E619A43F4200BA5F12 /* TGRBookResponse.h */,
+				871B48E719A43F4200BA5F12 /* TGRBookResponse.m */,
 				99F84C9F17D0735800914D48 /* TGRReadingList.h */,
 				99F84CA017D0735800914D48 /* TGRReadingList.m */,
 				99F84CA217D077A400914D48 /* ReadingList.xcdatamodeld */,
@@ -427,6 +432,7 @@
 				99E73BCC17CE3F9F00FE1C29 /* TGRBookCell.m in Sources */,
 				99E7EC7517CF1F2900F618C4 /* UIView+FrameAdditions.m in Sources */,
 				99F84CA117D0735800914D48 /* TGRReadingList.m in Sources */,
+				871B48E819A43F4200BA5F12 /* TGRBookResponse.m in Sources */,
 				99F84CA417D077A400914D48 /* ReadingList.xcdatamodeld in Sources */,
 				99F84CA917D09D7C00914D48 /* TGRFetchedResultsControllerDataSource.m in Sources */,
 				99F84CAC17D09DE200914D48 /* TGRDataSource.m in Sources */,
@@ -536,6 +542,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReadingList/ReadingList-Prefix.pch";
 				INFOPLIST_FILE = "ReadingList/ReadingList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -548,6 +555,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReadingList/ReadingList-Prefix.pch";
 				INFOPLIST_FILE = "ReadingList/ReadingList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
