@@ -8,6 +8,7 @@
 
 #import "TGRBookCatalog.h"
 #import "TGRBook.h"
+#import "TGRBookResponse.h"
 
 @implementation TGRBookCatalog
 
@@ -18,15 +19,26 @@
 - (void)searchBooksWithTerm:(NSString *)term completionBlock:(void (^)(NSArray *results, NSError *error))block {
     NSParameterAssert(term);
     NSParameterAssert(block);
-
+    
     NSDictionary *parameters = @{
-            @"term" : term,
-            @"entity" : @"ebook"
-    };
+                                 @"term" : term,
+                                 @"entity" : @"ebook"
+                                 };
 
-    [self GET:@"search" parameters:parameters resultClass:TGRBook.class resultKeyPath:@"results" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
-        block(responseObject, error);
-    }];
+    [self GET:@"search" parameters:parameters
+        completion:^(OVCResponse *response, NSError *error) {
+            block(response.result, error);
+   }];
+}
+
++ (NSDictionary *)modelClassesByResourcePath {
+    return @{
+             @"*": [TGRBook class],
+             };
+}
+
++ (Class)responseClass {
+    return [TGRBookResponse class];
 }
 
 @end

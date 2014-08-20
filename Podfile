@@ -1,2 +1,2 @@
-platform :ios, '6.0'
-pod 'Overcoat', '1.2.1'
+platform :ios, '7.0'
+pod 'Overcoat/ReactiveCocoa', '2.0.2'
